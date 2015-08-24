@@ -1,0 +1,435 @@
+Classic Timing Analyzer report for ps2
+Sat Jun 23 17:22:00 2007
+Quartus II Version 6.1 Build 201 11/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                   ;
++------------------------------+-------+---------------+----------------------------------+--------------------+-------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From               ; To                                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------+-------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.852 ns                         ; m_data             ; mouse:u1|q[32]                      ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 15.963 ns                        ; VGA:u2|g1          ; g                                   ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.072 ns                        ; m_data             ; mouse:u1|m2_state.m2_await_response ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 85.83 MHz ( period = 11.651 ns ) ; mouse:u1|mousey[0] ; VGA:u2|r1                           ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                    ;                                     ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------+-------------------------------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1C6Q240C8        ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Default hold multicycle                               ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From               ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 85.83 MHz ( period = 11.651 ns )                    ; mouse:u1|mousey[0] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.794 ns               ;
+; N/A                                     ; 85.85 MHz ( period = 11.648 ns )                    ; mouse:u1|mousey[0] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.791 ns               ;
+; N/A                                     ; 86.96 MHz ( period = 11.500 ns )                    ; mouse:u1|mousey[1] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.643 ns               ;
+; N/A                                     ; 86.98 MHz ( period = 11.497 ns )                    ; mouse:u1|mousey[1] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.640 ns               ;
+; N/A                                     ; 87.81 MHz ( period = 11.388 ns )                    ; mouse:u1|mousey[0] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 11.531 ns               ;
+; N/A                                     ; 87.91 MHz ( period = 11.375 ns )                    ; mouse:u1|mousey[2] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.518 ns               ;
+; N/A                                     ; 87.94 MHz ( period = 11.372 ns )                    ; mouse:u1|mousey[2] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.515 ns               ;
+; N/A                                     ; 88.99 MHz ( period = 11.237 ns )                    ; mouse:u1|mousey[1] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 11.380 ns               ;
+; N/A                                     ; 89.58 MHz ( period = 11.163 ns )                    ; mouse:u1|mousey[3] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.306 ns               ;
+; N/A                                     ; 89.61 MHz ( period = 11.160 ns )                    ; mouse:u1|mousey[3] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.303 ns               ;
+; N/A                                     ; 89.99 MHz ( period = 11.112 ns )                    ; mouse:u1|mousey[2] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 11.255 ns               ;
+; N/A                                     ; 90.53 MHz ( period = 11.046 ns )                    ; mouse:u1|mousex[3] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.150 ns               ;
+; N/A                                     ; 90.56 MHz ( period = 11.043 ns )                    ; mouse:u1|mousex[3] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.147 ns               ;
+; N/A                                     ; 90.73 MHz ( period = 11.022 ns )                    ; mouse:u1|mousex[0] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.126 ns               ;
+; N/A                                     ; 90.75 MHz ( period = 11.019 ns )                    ; mouse:u1|mousex[0] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.123 ns               ;
+; N/A                                     ; 90.77 MHz ( period = 11.017 ns )                    ; mouse:u1|mousey[4] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.160 ns               ;
+; N/A                                     ; 90.79 MHz ( period = 11.014 ns )                    ; mouse:u1|mousey[4] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.157 ns               ;
+; N/A                                     ; 90.80 MHz ( period = 11.013 ns )                    ; mouse:u1|mousex[1] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.117 ns               ;
+; N/A                                     ; 90.83 MHz ( period = 11.010 ns )                    ; mouse:u1|mousex[1] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.114 ns               ;
+; N/A                                     ; 91.19 MHz ( period = 10.966 ns )                    ; mouse:u1|mousex[2] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 11.070 ns               ;
+; N/A                                     ; 91.22 MHz ( period = 10.963 ns )                    ; mouse:u1|mousex[2] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 11.067 ns               ;
+; N/A                                     ; 91.74 MHz ( period = 10.900 ns )                    ; mouse:u1|mousey[3] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 11.043 ns               ;
+; N/A                                     ; 91.93 MHz ( period = 10.878 ns )                    ; mouse:u1|mousex[6] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.982 ns               ;
+; N/A                                     ; 91.95 MHz ( period = 10.875 ns )                    ; mouse:u1|mousex[6] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.979 ns               ;
+; N/A                                     ; 92.48 MHz ( period = 10.813 ns )                    ; mouse:u1|mousey[7] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.956 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; mouse:u1|mousey[7] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.953 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; mouse:u1|mousex[4] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.909 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; mouse:u1|mousex[5] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.909 ns               ;
+; N/A                                     ; 92.58 MHz ( period = 10.802 ns )                    ; mouse:u1|mousex[4] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.906 ns               ;
+; N/A                                     ; 92.58 MHz ( period = 10.802 ns )                    ; mouse:u1|mousex[5] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.906 ns               ;
+; N/A                                     ; 92.67 MHz ( period = 10.791 ns )                    ; mouse:u1|mousey[6] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.934 ns               ;
+; N/A                                     ; 92.70 MHz ( period = 10.788 ns )                    ; mouse:u1|mousey[6] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.931 ns               ;
+; N/A                                     ; 92.74 MHz ( period = 10.783 ns )                    ; mouse:u1|mousex[3] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.887 ns               ;
+; N/A                                     ; 92.95 MHz ( period = 10.759 ns )                    ; mouse:u1|mousex[0] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.863 ns               ;
+; N/A                                     ; 92.99 MHz ( period = 10.754 ns )                    ; mouse:u1|mousey[4] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.897 ns               ;
+; N/A                                     ; 93.02 MHz ( period = 10.750 ns )                    ; mouse:u1|mousex[1] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.854 ns               ;
+; N/A                                     ; 93.43 MHz ( period = 10.703 ns )                    ; mouse:u1|mousex[2] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.807 ns               ;
+; N/A                                     ; 93.77 MHz ( period = 10.664 ns )                    ; mouse:u1|mousey[5] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.807 ns               ;
+; N/A                                     ; 93.80 MHz ( period = 10.661 ns )                    ; mouse:u1|mousey[5] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.804 ns               ;
+; N/A                                     ; 94.21 MHz ( period = 10.615 ns )                    ; mouse:u1|mousex[6] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.719 ns               ;
+; N/A                                     ; 94.34 MHz ( period = 10.600 ns )                    ; mouse:u1|mousex[7] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.704 ns               ;
+; N/A                                     ; 94.37 MHz ( period = 10.597 ns )                    ; mouse:u1|mousex[7] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.701 ns               ;
+; N/A                                     ; 94.74 MHz ( period = 10.555 ns )                    ; mouse:u1|mousey[8] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.698 ns               ;
+; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; mouse:u1|mousey[8] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.695 ns               ;
+; N/A                                     ; 94.79 MHz ( period = 10.550 ns )                    ; mouse:u1|mousey[7] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.693 ns               ;
+; N/A                                     ; 94.86 MHz ( period = 10.542 ns )                    ; mouse:u1|mousex[4] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.646 ns               ;
+; N/A                                     ; 94.86 MHz ( period = 10.542 ns )                    ; mouse:u1|mousex[5] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.646 ns               ;
+; N/A                                     ; 94.98 MHz ( period = 10.528 ns )                    ; mouse:u1|mousey[6] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.671 ns               ;
+; N/A                                     ; 96.14 MHz ( period = 10.401 ns )                    ; mouse:u1|mousey[5] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.544 ns               ;
+; N/A                                     ; 96.70 MHz ( period = 10.341 ns )                    ; mouse:u1|mousex[8] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 10.445 ns               ;
+; N/A                                     ; 96.73 MHz ( period = 10.338 ns )                    ; mouse:u1|mousex[8] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 10.442 ns               ;
+; N/A                                     ; 96.74 MHz ( period = 10.337 ns )                    ; mouse:u1|mousex[7] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.441 ns               ;
+; N/A                                     ; 97.16 MHz ( period = 10.292 ns )                    ; mouse:u1|mousey[8] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.435 ns               ;
+; N/A                                     ; 98.12 MHz ( period = 10.192 ns )                    ; VGA:u2|vector_y[5] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.952 ns                ;
+; N/A                                     ; 98.15 MHz ( period = 10.189 ns )                    ; VGA:u2|vector_y[5] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.949 ns                ;
+; N/A                                     ; 99.23 MHz ( period = 10.078 ns )                    ; mouse:u1|mousex[8] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 10.182 ns               ;
+; N/A                                     ; 99.47 MHz ( period = 10.053 ns )                    ; VGA:u2|vector_y[3] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.813 ns                ;
+; N/A                                     ; 99.50 MHz ( period = 10.050 ns )                    ; VGA:u2|vector_y[3] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.810 ns                ;
+; N/A                                     ; 100.72 MHz ( period = 9.929 ns )                    ; VGA:u2|vector_y[5] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 9.689 ns                ;
+; N/A                                     ; 102.15 MHz ( period = 9.790 ns )                    ; VGA:u2|vector_y[3] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 9.550 ns                ;
+; N/A                                     ; 103.65 MHz ( period = 9.648 ns )                    ; VGA:u2|vector_y[1] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.408 ns                ;
+; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; VGA:u2|vector_y[1] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.405 ns                ;
+; N/A                                     ; 105.29 MHz ( period = 9.498 ns )                    ; VGA:u2|vector_y[0] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.258 ns                ;
+; N/A                                     ; 105.30 MHz ( period = 9.497 ns )                    ; mouse:u1|mousey[9] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.640 ns                ;
+; N/A                                     ; 105.32 MHz ( period = 9.495 ns )                    ; VGA:u2|vector_y[0] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.255 ns                ;
+; N/A                                     ; 105.33 MHz ( period = 9.494 ns )                    ; mouse:u1|mousey[9] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.637 ns                ;
+; N/A                                     ; 106.55 MHz ( period = 9.385 ns )                    ; VGA:u2|vector_y[1] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 9.145 ns                ;
+; N/A                                     ; 107.91 MHz ( period = 9.267 ns )                    ; mouse:u1|mousex[9] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 9.371 ns                ;
+; N/A                                     ; 107.94 MHz ( period = 9.264 ns )                    ; mouse:u1|mousex[9] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 9.368 ns                ;
+; N/A                                     ; 108.28 MHz ( period = 9.235 ns )                    ; VGA:u2|vector_y[0] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.995 ns                ;
+; N/A                                     ; 108.30 MHz ( period = 9.234 ns )                    ; mouse:u1|mousey[9] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 9.377 ns                ;
+; N/A                                     ; 110.40 MHz ( period = 9.058 ns )                    ; VGA:u2|vector_y[6] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 110.44 MHz ( period = 9.055 ns )                    ; VGA:u2|vector_y[6] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.815 ns                ;
+; N/A                                     ; 111.06 MHz ( period = 9.004 ns )                    ; mouse:u1|mousex[9] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 9.108 ns                ;
+; N/A                                     ; 112.45 MHz ( period = 8.893 ns )                    ; VGA:u2|vector_x[0] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.632 ns                ;
+; N/A                                     ; 112.49 MHz ( period = 8.890 ns )                    ; VGA:u2|vector_x[0] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.629 ns                ;
+; N/A                                     ; 112.57 MHz ( period = 8.883 ns )                    ; VGA:u2|vector_x[2] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.622 ns                ;
+; N/A                                     ; 112.61 MHz ( period = 8.880 ns )                    ; VGA:u2|vector_x[2] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.619 ns                ;
+; N/A                                     ; 113.01 MHz ( period = 8.849 ns )                    ; VGA:u2|vector_x[3] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.588 ns                ;
+; N/A                                     ; 113.05 MHz ( period = 8.846 ns )                    ; VGA:u2|vector_x[3] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.585 ns                ;
+; N/A                                     ; 113.70 MHz ( period = 8.795 ns )                    ; VGA:u2|vector_y[6] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.555 ns                ;
+; N/A                                     ; 114.10 MHz ( period = 8.764 ns )                    ; VGA:u2|vector_y[8] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.524 ns                ;
+; N/A                                     ; 114.14 MHz ( period = 8.761 ns )                    ; VGA:u2|vector_y[8] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.521 ns                ;
+; N/A                                     ; 115.15 MHz ( period = 8.684 ns )                    ; VGA:u2|vector_y[2] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.444 ns                ;
+; N/A                                     ; 115.19 MHz ( period = 8.681 ns )                    ; VGA:u2|vector_y[2] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.441 ns                ;
+; N/A                                     ; 115.87 MHz ( period = 8.630 ns )                    ; VGA:u2|vector_x[0] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.369 ns                ;
+; N/A                                     ; 116.01 MHz ( period = 8.620 ns )                    ; VGA:u2|vector_x[2] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.359 ns                ;
+; N/A                                     ; 116.08 MHz ( period = 8.615 ns )                    ; VGA:u2|vector_x[8] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.354 ns                ;
+; N/A                                     ; 116.12 MHz ( period = 8.612 ns )                    ; VGA:u2|vector_x[8] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.351 ns                ;
+; N/A                                     ; 116.29 MHz ( period = 8.599 ns )                    ; VGA:u2|vector_x[1] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.338 ns                ;
+; N/A                                     ; 116.33 MHz ( period = 8.596 ns )                    ; VGA:u2|vector_x[1] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.335 ns                ;
+; N/A                                     ; 116.47 MHz ( period = 8.586 ns )                    ; VGA:u2|vector_x[3] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.325 ns                ;
+; N/A                                     ; 117.40 MHz ( period = 8.518 ns )                    ; VGA:u2|vector_y[4] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.278 ns                ;
+; N/A                                     ; 117.44 MHz ( period = 8.515 ns )                    ; VGA:u2|vector_y[4] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.275 ns                ;
+; N/A                                     ; 117.62 MHz ( period = 8.502 ns )                    ; VGA:u2|vector_x[7] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.241 ns                ;
+; N/A                                     ; 117.63 MHz ( period = 8.501 ns )                    ; VGA:u2|vector_y[8] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.261 ns                ;
+; N/A                                     ; 117.66 MHz ( period = 8.499 ns )                    ; VGA:u2|vector_x[7] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.238 ns                ;
+; N/A                                     ; 117.90 MHz ( period = 8.482 ns )                    ; VGA:u2|vector_x[6] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.221 ns                ;
+; N/A                                     ; 117.94 MHz ( period = 8.479 ns )                    ; VGA:u2|vector_x[6] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.218 ns                ;
+; N/A                                     ; 118.75 MHz ( period = 8.421 ns )                    ; VGA:u2|vector_y[2] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.181 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[9] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[8] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[7] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[4] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[6] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[5] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[2] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[1] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[0] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; mouse:u1|mousex[5] ; mouse:u1|mousex[3] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 119.73 MHz ( period = 8.352 ns )                    ; VGA:u2|vector_x[8] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.091 ns                ;
+; N/A                                     ; 119.96 MHz ( period = 8.336 ns )                    ; VGA:u2|vector_x[1] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.075 ns                ;
+; N/A                                     ; 120.71 MHz ( period = 8.284 ns )                    ; VGA:u2|vector_y[7] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.044 ns                ;
+; N/A                                     ; 120.76 MHz ( period = 8.281 ns )                    ; VGA:u2|vector_y[7] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.041 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[8] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[7] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[4] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[6] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[3] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[2] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; mouse:u1|mousey[8] ; mouse:u1|mousey[9] ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.92 MHz ( period = 8.270 ns )                    ; VGA:u2|vector_x[4] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.009 ns                ;
+; N/A                                     ; 120.96 MHz ( period = 8.267 ns )                    ; VGA:u2|vector_x[4] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 8.006 ns                ;
+; N/A                                     ; 121.02 MHz ( period = 8.263 ns )                    ; VGA:u2|vector_x[5] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 8.002 ns                ;
+; N/A                                     ; 121.07 MHz ( period = 8.260 ns )                    ; VGA:u2|vector_x[5] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 7.999 ns                ;
+; N/A                                     ; 121.14 MHz ( period = 8.255 ns )                    ; VGA:u2|vector_y[4] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 8.015 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; VGA:u2|vector_x[7] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.978 ns                ;
+; N/A                                     ; 121.67 MHz ( period = 8.219 ns )                    ; VGA:u2|vector_x[6] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.958 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[9] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[8] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[7] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[4] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[6] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[5] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[2] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[1] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[0] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; mouse:u1|mousex[0] ; mouse:u1|mousex[3] ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; VGA:u2|vector_x[9] ; VGA:u2|r1          ; clk        ; clk      ; None                        ; None                      ; 7.878 ns                ;
+; N/A                                     ; 122.91 MHz ( period = 8.136 ns )                    ; VGA:u2|vector_x[9] ; VGA:u2|b1          ; clk        ; clk      ; None                        ; None                      ; 7.875 ns                ;
+; N/A                                     ; 124.67 MHz ( period = 8.021 ns )                    ; VGA:u2|vector_y[7] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.781 ns                ;
+; N/A                                     ; 124.89 MHz ( period = 8.007 ns )                    ; VGA:u2|vector_x[4] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.746 ns                ;
+; N/A                                     ; 125.00 MHz ( period = 8.000 ns )                    ; VGA:u2|vector_x[5] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.739 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[8] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[7] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[4] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[6] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[3] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[2] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 125.82 MHz ( period = 7.948 ns )                    ; mouse:u1|mousey[1] ; mouse:u1|mousey[9] ; clk        ; clk      ; None                        ; None                      ; 7.687 ns                ;
+; N/A                                     ; 126.97 MHz ( period = 7.876 ns )                    ; VGA:u2|vector_x[9] ; VGA:u2|g1          ; clk        ; clk      ; None                        ; None                      ; 7.615 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[8] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[7] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[4] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[6] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[3] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[2] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.04 MHz ( period = 7.810 ns )                    ; mouse:u1|mousey[6] ; mouse:u1|mousey[9] ; clk        ; clk      ; None                        ; None                      ; 7.549 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[9] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[8] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[7] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[4] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[6] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[5] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[2] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[1] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[0] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; mouse:u1|mousex[2] ; mouse:u1|mousex[3] ; clk        ; clk      ; None                        ; None                      ; 7.532 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[8] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[7] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[4] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[6] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[3] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[2] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 128.87 MHz ( period = 7.760 ns )                    ; mouse:u1|mousey[7] ; mouse:u1|mousey[9] ; clk        ; clk      ; None                        ; None                      ; 7.499 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[8] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[7] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[4] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[6] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[3] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[2] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.03 MHz ( period = 7.750 ns )                    ; mouse:u1|mousey[3] ; mouse:u1|mousey[9] ; clk        ; clk      ; None                        ; None                      ; 7.489 ns                ;
+; N/A                                     ; 129.05 MHz ( period = 7.749 ns )                    ; mouse:u1|mousey[4] ; mouse:u1|mousey[1] ; clk        ; clk      ; None                        ; None                      ; 7.488 ns                ;
+; N/A                                     ; 129.05 MHz ( period = 7.749 ns )                    ; mouse:u1|mousey[4] ; mouse:u1|mousey[0] ; clk        ; clk      ; None                        ; None                      ; 7.488 ns                ;
+; N/A                                     ; 129.05 MHz ( period = 7.749 ns )                    ; mouse:u1|mousey[4] ; mouse:u1|mousey[5] ; clk        ; clk      ; None                        ; None                      ; 7.488 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                    ;                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; tsu                                                                                         ;
++-------+--------------+------------+--------+-------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                  ; To Clock ;
++-------+--------------+------------+--------+-------------------------------------+----------+
+; N/A   ; None         ; 1.852 ns   ; m_data ; mouse:u1|q[32]                      ; clk      ;
+; N/A   ; None         ; 0.442 ns   ; m_clk  ; mouse:u1|m1_state.m1_rising_edge    ; clk      ;
+; N/A   ; None         ; 0.440 ns   ; m_clk  ; mouse:u1|m1_state.m1_falling_edge   ; clk      ;
+; N/A   ; None         ; 0.439 ns   ; m_clk  ; mouse:u1|m1_state.m1_clk_h          ; clk      ;
+; N/A   ; None         ; 0.430 ns   ; m_clk  ; mouse:u1|m1_state.m1_clk_l          ; clk      ;
+; N/A   ; None         ; 0.124 ns   ; m_data ; mouse:u1|m2_state.m2_await_response ; clk      ;
++-------+--------------+------------+--------+-------------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------+
+; tco                                                                                       ;
++-------+--------------+------------+---------------------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To     ; From Clock ;
++-------+--------------+------------+---------------------------------+--------+------------+
+; N/A   ; None         ; 15.963 ns  ; VGA:u2|g1                       ; g      ; clk        ;
+; N/A   ; None         ; 15.942 ns  ; VGA:u2|hs1                      ; b      ; clk        ;
+; N/A   ; None         ; 15.796 ns  ; VGA:u2|vs1                      ; b      ; clk        ;
+; N/A   ; None         ; 15.790 ns  ; VGA:u2|vs1                      ; g      ; clk        ;
+; N/A   ; None         ; 15.767 ns  ; VGA:u2|r1                       ; r      ; clk        ;
+; N/A   ; None         ; 15.625 ns  ; VGA:u2|hs1                      ; g      ; clk        ;
+; N/A   ; None         ; 15.544 ns  ; VGA:u2|hs1                      ; r      ; clk        ;
+; N/A   ; None         ; 15.450 ns  ; VGA:u2|b1                       ; b      ; clk        ;
+; N/A   ; None         ; 14.268 ns  ; VGA:u2|vs1                      ; r      ; clk        ;
+; N/A   ; None         ; 13.526 ns  ; mouse:u1|m2_state.m2_data_low_1 ; m_data ; clk        ;
+; N/A   ; None         ; 13.041 ns  ; mouse:u1|m2_state.m2_data_low_3 ; m_data ; clk        ;
+; N/A   ; None         ; 13.041 ns  ; VGA:u2|hs                       ; hs     ; clk        ;
+; N/A   ; None         ; 12.740 ns  ; VGA:u2|vs                       ; vs     ; clk        ;
+; N/A   ; None         ; 12.589 ns  ; mouse:u1|m2_state.m2_data_low_2 ; m_data ; clk        ;
+; N/A   ; None         ; 12.230 ns  ; mouse:u1|m2_state.m2_hold_clk_l ; m_clk  ; clk        ;
++-------+--------------+------------+---------------------------------+--------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; th                                                                                                ;
++---------------+-------------+-----------+--------+-------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                  ; To Clock ;
++---------------+-------------+-----------+--------+-------------------------------------+----------+
+; N/A           ; None        ; -0.072 ns ; m_data ; mouse:u1|m2_state.m2_await_response ; clk      ;
+; N/A           ; None        ; -0.378 ns ; m_clk  ; mouse:u1|m1_state.m1_clk_l          ; clk      ;
+; N/A           ; None        ; -0.387 ns ; m_clk  ; mouse:u1|m1_state.m1_clk_h          ; clk      ;
+; N/A           ; None        ; -0.388 ns ; m_clk  ; mouse:u1|m1_state.m1_falling_edge   ; clk      ;
+; N/A           ; None        ; -0.390 ns ; m_clk  ; mouse:u1|m1_state.m1_rising_edge    ; clk      ;
+; N/A           ; None        ; -1.800 ns ; m_data ; mouse:u1|q[32]                      ; clk      ;
++---------------+-------------+-----------+--------+-------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 6.1 Build 201 11/27/2006 SJ Full Version
+    Info: Processing started: Sat Jun 23 17:21:57 2007
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ps2 -c ps2 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "count64:u0|count[6]" as buffer
+    Info: Detected ripple clock "VGA:u2|clk" as buffer
+Info: Clock "clk" has Internal fmax of 85.83 MHz between source register "mouse:u1|mousey[0]" and destination register "VGA:u2|r1" (period= 11.651 ns)
+    Info: + Longest register to register delay is 11.794 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X15_Y12_N0; Fanout = 36; REG Node = 'mouse:u1|mousey[0]'
+        Info: 2: + IC(1.289 ns) + CELL(0.575 ns) = 1.864 ns; Loc. = LC_X14_Y10_N0; Fanout = 2; COMB Node = 'VGA:u2|Add10~157COUT1'
+        Info: 3: + IC(0.000 ns) + CELL(0.608 ns) = 2.472 ns; Loc. = LC_X14_Y10_N1; Fanout = 3; COMB Node = 'VGA:u2|Add10~158'
+        Info: 4: + IC(1.711 ns) + CELL(0.114 ns) = 4.297 ns; Loc. = LC_X19_Y11_N9; Fanout = 1; COMB Node = 'VGA:u2|Equal8~107'
+        Info: 5: + IC(1.686 ns) + CELL(0.292 ns) = 6.275 ns; Loc. = LC_X16_Y13_N0; Fanout = 2; COMB Node = 'VGA:u2|Equal8~110'
+        Info: 6: + IC(1.581 ns) + CELL(0.114 ns) = 7.970 ns; Loc. = LC_X21_Y13_N4; Fanout = 1; COMB Node = 'VGA:u2|process7~775'
+        Info: 7: + IC(1.578 ns) + CELL(0.114 ns) = 9.662 ns; Loc. = LC_X16_Y13_N3; Fanout = 1; COMB Node = 'VGA:u2|process7~788'
+        Info: 8: + IC(1.264 ns) + CELL(0.114 ns) = 11.040 ns; Loc. = LC_X19_Y13_N5; Fanout = 3; COMB Node = 'VGA:u2|r1~52'
+        Info: 9: + IC(0.445 ns) + CELL(0.309 ns) = 11.794 ns; Loc. = LC_X19_Y13_N9; Fanout = 1; REG Node = 'VGA:u2|r1'
+        Info: Total cell delay = 2.240 ns ( 18.99 % )
+        Info: Total interconnect delay = 9.554 ns ( 81.01 % )
+    Info: - Smallest clock skew is 0.404 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.773 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_28; Fanout = 7; CLK Node = 'clk'
+            Info: 2: + IC(0.745 ns) + CELL(0.935 ns) = 3.149 ns; Loc. = LC_X9_Y10_N2; Fanout = 30; REG Node = 'VGA:u2|clk'
+            Info: 3: + IC(3.913 ns) + CELL(0.711 ns) = 7.773 ns; Loc. = LC_X19_Y13_N9; Fanout = 1; REG Node = 'VGA:u2|r1'
+            Info: Total cell delay = 3.115 ns ( 40.07 % )
+            Info: Total interconnect delay = 4.658 ns ( 59.93 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.369 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_28; Fanout = 7; CLK Node = 'clk'
+            Info: 2: + IC(0.745 ns) + CELL(0.935 ns) = 3.149 ns; Loc. = LC_X8_Y10_N6; Fanout = 91; REG Node = 'count64:u0|count[6]'
+            Info: 3: + IC(3.509 ns) + CELL(0.711 ns) = 7.369 ns; Loc. = LC_X15_Y12_N0; Fanout = 36; REG Node = 'mouse:u1|mousey[0]'
+            Info: Total cell delay = 3.115 ns ( 42.27 % )
+            Info: Total interconnect delay = 4.254 ns ( 57.73 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Micro setup delay of destination is 0.037 ns
+Info: tsu for register "mouse:u1|q[32]" (data pin = "m_data", clock pin = "clk") is 1.852 ns
+    Info: + Longest pin to register delay is 9.184 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_166; Fanout = 1; PIN Node = 'm_data'
+        Info: 2: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = IOC_X35_Y16_N1; Fanout = 2; COMB Node = 'm_data~0'
+        Info: 3: + IC(7.600 ns) + CELL(0.115 ns) = 9.184 ns; Loc. = LC_X14_Y12_N3; Fanout = 1; REG Node = 'mouse:u1|q[32]'
+        Info: Total cell delay = 1.584 ns ( 17.25 % )
+        Info: Total interconnect delay = 7.600 ns ( 82.75 % )
+    Info: + Micro setup delay of destination is 0.037 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 7.369 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_28; Fanout = 7; CLK Node = 'clk'
+        Info: 2: + IC(0.745 ns) + CELL(0.935 ns) = 3.149 ns; Loc. = LC_X8_Y10_N6; Fanout = 91; REG Node = 'count64:u0|count[6]'
+        Info: 3: + IC(3.509 ns) + CELL(0.711 ns) = 7.369 ns; Loc. = LC_X14_Y12_N3; Fanout = 1; REG Node = 'mouse:u1|q[32]'
+        Info: Total cell delay = 3.115 ns ( 42.27 % )
+        Info: Total interconnect delay = 4.254 ns ( 57.73 % )
+Info: tco from clock "clk" to destination pin "g" through register "VGA:u2|g1" is 15.963 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.773 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_28; Fanout = 7; CLK Node = 'clk'
+        Info: 2: + IC(0.745 ns) + CELL(0.935 ns) = 3.149 ns; Loc. = LC_X9_Y10_N2; Fanout = 30; REG Node = 'VGA:u2|clk'
+        Info: 3: + IC(3.913 ns) + CELL(0.711 ns) = 7.773 ns; Loc. = LC_X19_Y13_N6; Fanout = 1; REG Node = 'VGA:u2|g1'
+        Info: Total cell delay = 3.115 ns ( 40.07 % )
+        Info: Total interconnect delay = 4.658 ns ( 59.93 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Longest register to pin delay is 7.966 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X19_Y13_N6; Fanout = 1; REG Node = 'VGA:u2|g1'
+        Info: 2: + IC(1.626 ns) + CELL(0.590 ns) = 2.216 ns; Loc. = LC_X21_Y9_N2; Fanout = 1; COMB Node = 'VGA:u2|g'
+        Info: 3: + IC(3.642 ns) + CELL(2.108 ns) = 7.966 ns; Loc. = PIN_225; Fanout = 0; PIN Node = 'g'
+        Info: Total cell delay = 2.698 ns ( 33.87 % )
+        Info: Total interconnect delay = 5.268 ns ( 66.13 % )
+Info: th for register "mouse:u1|m2_state.m2_await_response" (data pin = "m_data", clock pin = "clk") is -0.072 ns
+    Info: + Longest clock path from clock "clk" to destination register is 7.408 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_28; Fanout = 7; CLK Node = 'clk'
+        Info: 2: + IC(0.745 ns) + CELL(0.935 ns) = 3.149 ns; Loc. = LC_X8_Y10_N6; Fanout = 91; REG Node = 'count64:u0|count[6]'
+        Info: 3: + IC(3.548 ns) + CELL(0.711 ns) = 7.408 ns; Loc. = LC_X27_Y14_N8; Fanout = 1; REG Node = 'mouse:u1|m2_state.m2_await_response'
+        Info: Total cell delay = 3.115 ns ( 42.05 % )
+        Info: Total interconnect delay = 4.293 ns ( 57.95 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+    Info: - Shortest pin to register delay is 7.495 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_166; Fanout = 1; PIN Node = 'm_data'
+        Info: 2: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = IOC_X35_Y16_N1; Fanout = 2; COMB Node = 'm_data~0'
+        Info: 3: + IC(5.717 ns) + CELL(0.309 ns) = 7.495 ns; Loc. = LC_X27_Y14_N8; Fanout = 1; REG Node = 'mouse:u1|m2_state.m2_await_response'
+        Info: Total cell delay = 1.778 ns ( 23.72 % )
+        Info: Total interconnect delay = 5.717 ns ( 76.28 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Allocated 102 megabytes of memory during processing
+    Info: Processing ended: Sat Jun 23 17:22:00 2007
+    Info: Elapsed time: 00:00:03
+
+

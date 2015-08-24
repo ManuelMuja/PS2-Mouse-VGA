@@ -1,0 +1,131 @@
+Version 6.1 Build 201 11/27/2006 SJ Full Version
+35
+1935
+OFF
+OFF
+OFF
+OFF
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+manage_data
+# storage
+db|ps2.(0).cnf
+db|ps2.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ps2.vhd
+d8fdfd8ffbe3268319bba77e737d07
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+count64
+# storage
+db|ps2.(1).cnf
+db|ps2.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+div.vhd
+6314f6e4f1158e544307a5d7aedb
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+count64:u0
+}
+# end
+# entity
+mouse
+# storage
+db|ps2.(2).cnf
+db|ps2.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mouse.vhd
+e82e41a54015b484d5e3e747deb593
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+ constraint(mousex)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(mousey)
+9 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+mouse:u1
+}
+# end
+# entity
+VGA
+# storage
+db|ps2.(3).cnf
+db|ps2.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+VGA.vhd
+5611d32b3bb7c84a9e62553edbe9724
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+ constraint(xs)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(ys)
+9 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+VGA:u2
+}
+# end
+# complete
+

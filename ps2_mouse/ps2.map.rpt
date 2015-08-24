@@ -1,0 +1,357 @@
+Analysis & Synthesis report for ps2
+Sat Jun 23 17:20:05 2007
+Quartus II Version 6.1 Build 201 11/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |manage_data|mouse:u1|m2_state
+  8. State Machine - |manage_data|mouse:u1|m1_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Jun 23 17:20:04 2007    ;
+; Quartus II Version          ; 6.1 Build 201 11/27/2006 SJ Full Version ;
+; Revision Name               ; ps2                                      ;
+; Top-level Entity Name       ; manage_data                              ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; N/A until Partition Merge                ;
+; Total pins                  ; N/A until Partition Merge                ;
+; Total virtual pins          ; N/A until Partition Merge                ;
+; Total memory bits           ; N/A until Partition Merge                ;
+; Total PLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP1C6Q240C8        ;                    ;
+; Top-level entity name                                              ; manage_data        ; ps2                ;
+; Family name                                                        ; Cyclone            ; Stratix            ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Safe State Machine                                                 ; Off                ; Off                ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                  ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                  ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                  ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                  ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                    ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report           ; 100                ; 100                ;
+; Use smart compilation                                              ; Off                ; Off                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                ;
++----------------------------------+-----------------+-----------------+--------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path   ;
++----------------------------------+-----------------+-----------------+--------------------------------+
+; div.vhd                          ; yes             ; User VHDL File  ; D:/DLlab07/ps2_mouse/div.vhd   ;
+; ps2.vhd                          ; yes             ; User VHDL File  ; D:/DLlab07/ps2_mouse/ps2.vhd   ;
+; mouse.vhd                        ; yes             ; User VHDL File  ; D:/DLlab07/ps2_mouse/mouse.vhd ;
+; VGA.vhd                          ; yes             ; User VHDL File  ; D:/DLlab07/ps2_mouse/VGA.vhd   ;
++----------------------------------+-----------------+-----------------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 500   ;
+;     -- Combinational with no register       ; 377   ;
+;     -- Register only                        ; 44    ;
+;     -- Combinational with a register        ; 79    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 114   ;
+;     -- 3 input functions                    ; 128   ;
+;     -- 2 input functions                    ; 200   ;
+;     -- 1 input functions                    ; 11    ;
+;     -- 0 input functions                    ; 3     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 229   ;
+;     -- arithmetic mode                      ; 271   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 6     ;
+;     -- asynchronous clear/load mode         ; 123   ;
+;                                             ;       ;
+; Total registers                             ; 123   ;
+; Total logic cells in carry chains           ; 306   ;
+; I/O pins                                    ; 2     ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 114   ;
+; Total fan-out                               ; 1647  ;
+; Average fan-out                             ; 3.22  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name     ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+
+; |manage_data               ; 500 (1)     ; 123          ; 0           ; 2    ; 0            ; 377 (1)      ; 44 (0)            ; 79 (0)           ; 306 (0)         ; 0 (0)      ; |manage_data            ;
+;    |VGA:u2|                ; 374 (374)   ; 27           ; 0           ; 0    ; 0            ; 347 (347)    ; 7 (7)             ; 20 (20)          ; 266 (266)       ; 0 (0)      ; |manage_data|VGA:u2     ;
+;    |count64:u0|            ; 6 (6)       ; 6            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; 6 (6)           ; 0 (0)      ; |manage_data|count64:u0 ;
+;    |mouse:u1|              ; 119 (119)   ; 90           ; 0           ; 0    ; 0            ; 29 (29)      ; 37 (37)           ; 53 (53)          ; 34 (34)         ; 0 (0)      ; |manage_data|mouse:u1   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |manage_data|mouse:u1|m2_state                                                                                                                                                                                                                                                                                                     ;
++----------------------------+----------------------------+--------------------------+-------------------------+------------------------+-------------------------+------------------------+-------------------------+------------------------+------------------------+-----------------+--------------------+------------------+-------------------+
+; Name                       ; m2_state.m2_await_response ; m2_state.m2_error_no_ack ; m2_state.m2_data_high_3 ; m2_state.m2_data_low_3 ; m2_state.m2_data_high_2 ; m2_state.m2_data_low_2 ; m2_state.m2_data_high_1 ; m2_state.m2_data_low_1 ; m2_state.m2_hold_clk_l ; m2_state.m2_use ; m2_state.m2_gather ; m2_state.m2_wait ; m2_state.m2_reset ;
++----------------------------+----------------------------+--------------------------+-------------------------+------------------------+-------------------------+------------------------+-------------------------+------------------------+------------------------+-----------------+--------------------+------------------+-------------------+
+; m2_state.m2_reset          ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 0                 ;
+; m2_state.m2_wait           ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 1                ; 1                 ;
+; m2_state.m2_gather         ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 1                  ; 0                ; 1                 ;
+; m2_state.m2_use            ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 1               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_hold_clk_l     ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 1                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_low_1     ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 1                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_high_1    ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 1                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_low_2     ; 0                          ; 0                        ; 0                       ; 0                      ; 0                       ; 1                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_high_2    ; 0                          ; 0                        ; 0                       ; 0                      ; 1                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_low_3     ; 0                          ; 0                        ; 0                       ; 1                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_data_high_3    ; 0                          ; 0                        ; 1                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_error_no_ack   ; 0                          ; 1                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
+; m2_state.m2_await_response ; 1                          ; 0                        ; 0                       ; 0                      ; 0                       ; 0                      ; 0                       ; 0                      ; 0                      ; 0               ; 0                  ; 0                ; 1                 ;
++----------------------------+----------------------------+--------------------------+-------------------------+------------------------+-------------------------+------------------------+-------------------------+------------------------+------------------------+-----------------+--------------------+------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |manage_data|mouse:u1|m1_state                                                                                                                             ;
++--------------------------+-------------------------+-------------------------+-------------------+--------------------------+--------------------------+-------------------+
+; Name                     ; m1_state.m1_rising_wait ; m1_state.m1_rising_edge ; m1_state.m1_clk_l ; m1_state.m1_falling_wait ; m1_state.m1_falling_edge ; m1_state.m1_clk_h ;
++--------------------------+-------------------------+-------------------------+-------------------+--------------------------+--------------------------+-------------------+
+; m1_state.m1_clk_h        ; 0                       ; 0                       ; 0                 ; 0                        ; 0                        ; 0                 ;
+; m1_state.m1_falling_edge ; 0                       ; 0                       ; 0                 ; 0                        ; 1                        ; 1                 ;
+; m1_state.m1_falling_wait ; 0                       ; 0                       ; 0                 ; 1                        ; 0                        ; 1                 ;
+; m1_state.m1_clk_l        ; 0                       ; 0                       ; 1                 ; 0                        ; 0                        ; 1                 ;
+; m1_state.m1_rising_edge  ; 0                       ; 1                       ; 0                 ; 0                        ; 0                        ; 1                 ;
+; m1_state.m1_rising_wait  ; 1                       ; 0                       ; 0                 ; 0                        ; 0                        ; 1                 ;
++--------------------------+-------------------------+-------------------------+-------------------+--------------------------+--------------------------+-------------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; u0/count[0]                           ; Merged with u2/clk                     ;
+; u1/debounce_timer_count[1]            ; Stuck at GND due to stuck port data_in ;
+; u1/m2_state.m2_error_no_ack           ; Lost fanout                            ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 123   ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 103   ;
+; Number of registers using Asynchronous Load  ; 20    ;
+; Number of registers using Clock Enable       ; 77    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; VGA:u2|vs1                             ; 4       ;
+; VGA:u2|hs1                             ; 4       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |manage_data|mouse:u1|bitcount[0] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |manage_data|VGA:u2|r1            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.1 Build 201 11/27/2006 SJ Full Version
+    Info: Processing started: Sat Jun 23 17:19:58 2007
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ps2 -c ps2
+Info: Found 2 design units, including 1 entities, in source file div.vhd
+    Info: Found design unit 1: count64-behavioral
+    Info: Found entity 1: count64
+Info: Found 2 design units, including 1 entities, in source file ps2.vhd
+    Info: Found design unit 1: manage_data-proc
+    Info: Found entity 1: manage_data
+Info: Found 2 design units, including 1 entities, in source file mouse.vhd
+    Info: Found design unit 1: mouse-behavioral
+    Info: Found entity 1: mouse
+Info: Found 2 design units, including 1 entities, in source file VGA.vhd
+    Info: Found design unit 1: VGA-behavior
+    Info: Found entity 1: VGA
+Info: Elaborating entity "manage_data" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ps2.vhd(47): object "err" assigned a value but never read
+Info: Elaborating entity "count64" for hierarchy "count64:u0"
+Info: Elaborating entity "mouse" for hierarchy "mouse:u1"
+Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(57): object "clean_clk" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at mouse.vhd(231): signal "ps2_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse.vhd(233): signal "ps2_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "VGA" for hierarchy "VGA:u2"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "count64:u0|count[0]" merged to single register "VGA:u2|clk"
+Warning: Reduced register "mouse:u1|debounce_timer_count[1]" with stuck data_in port to stuck value GND
+Info: State machine "|manage_data|mouse:u1|m2_state" contains 13 states
+Info: State machine "|manage_data|mouse:u1|m1_state" contains 6 states
+Info: Selected Auto state machine encoding method for state machine "|manage_data|mouse:u1|m2_state"
+Info: Encoding result for state machine "|manage_data|mouse:u1|m2_state"
+    Info: Completed encoding using 13 state bits
+        Info: Encoded state bit "mouse:u1|m2_state.m2_await_response"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_error_no_ack"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_high_3"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_low_3"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_high_2"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_low_2"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_high_1"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_data_low_1"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_hold_clk_l"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_use"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_gather"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_wait"
+        Info: Encoded state bit "mouse:u1|m2_state.m2_reset"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_reset" uses code string "0000000000000"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_wait" uses code string "0000000000011"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_gather" uses code string "0000000000101"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_use" uses code string "0000000001001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_hold_clk_l" uses code string "0000000010001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_low_1" uses code string "0000000100001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_high_1" uses code string "0000001000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_low_2" uses code string "0000010000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_high_2" uses code string "0000100000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_low_3" uses code string "0001000000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_data_high_3" uses code string "0010000000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_error_no_ack" uses code string "0100000000001"
+    Info: State "|manage_data|mouse:u1|m2_state.m2_await_response" uses code string "1000000000001"
+Info: Selected Auto state machine encoding method for state machine "|manage_data|mouse:u1|m1_state"
+Info: Encoding result for state machine "|manage_data|mouse:u1|m1_state"
+    Info: Completed encoding using 6 state bits
+        Info: Encoded state bit "mouse:u1|m1_state.m1_rising_wait"
+        Info: Encoded state bit "mouse:u1|m1_state.m1_rising_edge"
+        Info: Encoded state bit "mouse:u1|m1_state.m1_clk_l"
+        Info: Encoded state bit "mouse:u1|m1_state.m1_falling_wait"
+        Info: Encoded state bit "mouse:u1|m1_state.m1_falling_edge"
+        Info: Encoded state bit "mouse:u1|m1_state.m1_clk_h"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_clk_h" uses code string "000000"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_falling_edge" uses code string "000011"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_falling_wait" uses code string "000101"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_clk_l" uses code string "001001"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_rising_edge" uses code string "010001"
+    Info: State "|manage_data|mouse:u1|m1_state.m1_rising_wait" uses code string "100001"
+Info: Registers with preset signals will power-up high
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "u1/m2_state.m2_error_no_ack" lost all its fanouts during netlist optimizations.
+Info: Implemented 511 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 5 output pins
+    Info: Implemented 4 bidirectional pins
+    Info: Implemented 500 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Allocated 142 megabytes of memory during processing
+    Info: Processing ended: Sat Jun 23 17:20:04 2007
+    Info: Elapsed time: 00:00:06
+
+
